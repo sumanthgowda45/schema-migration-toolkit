@@ -1,0 +1,23 @@
+{
+  "tables": [
+    {
+      "name": "ticket",
+      "schema": "platform",
+      "columns": [
+        {"name": "id", "data_type": "BIGINT", "nullable": false, "primary_key": true},
+        {"name": "subject", "data_type": "VARCHAR(200)", "nullable": false},
+        {"name": "status", "data_type": "VARCHAR(32)", "nullable": false, "default": "OPEN"},
+        {"name": "assignee", "data_type": "VARCHAR(100)", "nullable": true}
+      ]
+    },
+    {
+      "name": "app_config",
+      "schema": "platform",
+      "columns": [
+        {"name": "id", "data_type": "INT", "nullable": false, "primary_key": true},
+        {"name": "config_key", "data_type": "VARCHAR(128)", "nullable": false},
+        {"name": "config_value", "data_type": "VARCHAR(512)", "nullable": false}
+      ]
+    }
+  ]
+}

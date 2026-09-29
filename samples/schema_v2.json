@@ -1,0 +1,37 @@
+{
+  "tables": [
+    {
+      "name": "ticket",
+      "schema": "platform",
+      "columns": [
+        {"name": "id", "data_type": "BIGINT", "nullable": false, "primary_key": true},
+        {"name": "subject", "data_type": "VARCHAR(255)", "nullable": false},
+        {"name": "status", "data_type": "VARCHAR(32)", "nullable": false, "default": "OPEN"},
+        {"name": "assignee", "data_type": "VARCHAR(100)", "nullable": true},
+        {"name": "priority", "data_type": "VARCHAR(32)", "nullable": false, "default": "MEDIUM"},
+        {"name": "created_at", "data_type": "DATETIME", "nullable": false, "default": "CURRENT_TIMESTAMP"}
+      ]
+    },
+    {
+      "name": "app_config",
+      "schema": "platform",
+      "columns": [
+        {"name": "id", "data_type": "INT", "nullable": false, "primary_key": true},
+        {"name": "config_key", "data_type": "VARCHAR(128)", "nullable": false},
+        {"name": "config_value", "data_type": "VARCHAR(1024)", "nullable": false},
+        {"name": "is_active", "data_type": "TINYINT", "nullable": false, "default": "1"}
+      ]
+    },
+    {
+      "name": "audit_log",
+      "schema": "platform",
+      "columns": [
+        {"name": "id", "data_type": "BIGINT", "nullable": false, "primary_key": true},
+        {"name": "entity_type", "data_type": "VARCHAR(64)", "nullable": false},
+        {"name": "entity_id", "data_type": "VARCHAR(64)", "nullable": false},
+        {"name": "action", "data_type": "VARCHAR(32)", "nullable": false},
+        {"name": "created_at", "data_type": "DATETIME", "nullable": false, "default": "CURRENT_TIMESTAMP"}
+      ]
+    }
+  ]
+}
